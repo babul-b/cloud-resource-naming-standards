@@ -1,0 +1,76 @@
+# Generic cloud resource naming standard.
+# This file is intentionally anonymized and safe for public GitHub use.
+# Replace region/team/project values with your organization's approved codes.
+
+version: "1.0"
+
+allowed_environments:
+  - dev
+  - uat
+  - prod
+  - npe
+
+allowed_regions:
+  - region1
+  - region2
+  - nane1
+  - use1
+  - euw1
+
+patterns:
+  virtual_machine:
+    description: "Virtual machine / compute instance"
+    pattern: "^vm-[a-z0-9]{3,6}-(dev|uat|prod|npe)-[a-z0-9]+-[a-z0-9]+-[a-z0-9-]+$"
+    example: "vm-ubnt-dev-region1-analytics-edge"
+
+  firewall_rule:
+    description: "Firewall rule"
+    pattern: "^fw-[a-z0-9]+-(dev|uat|prod|npe)-(allow|deny)-(ingress|egress)-[a-z0-9]+-[a-z0-9-]+$"
+    example: "fw-data-dev-allow-ingress-analytics-api"
+
+  storage_bucket:
+    description: "Cloud storage bucket"
+    pattern: "^bkt-(dev|uat|prod|npe)-[a-z0-9]+-[a-z0-9]+-[a-z0-9]+-[a-z0-9-]+$"
+    example: "bkt-prod-region1-reporting-curated-data"
+
+  service_account:
+    description: "Service account display name or account id"
+    pattern: "^sa-[a-z0-9]+-(dev|uat|prod|npe)-[a-z0-9]+-[a-z0-9]+-[a-z0-9-]+$"
+    example: "sa-data-dev-region1-analytics-pipeline"
+
+  custom_role:
+    description: "Custom IAM role id"
+    pattern: "^cr_[a-z0-9]+_(dev|uat|prod|npe)_[a-z0-9]+_[a-z0-9]+_[a-z0-9_]+$"
+    example: "cr_data_dev_region1_analytics_pipeline_runner"
+
+  alert_policy:
+    description: "Monitoring alert policy"
+    pattern: "^alert-policy-(dev|uat|prod|npe)-[a-z0-9]+-[a-z0-9]+-[a-z0-9]+-[a-z0-9-]+$"
+    example: "alert-policy-prod-region1-data-pipeline-failure"
+
+  data_processing_cluster:
+    description: "Managed data processing cluster"
+    pattern: "^cluster-(dev|uat|prod|npe)-[a-z0-9]+-[0-9]+-(batch|streaming)-(autoscale|fixed)-[0-9]+$"
+    example: "cluster-prod-analytics-5-batch-autoscale-1"
+
+  autoscaling_policy:
+    description: "Autoscaling policy linked to a cluster"
+    pattern: "^ap-cluster-(dev|uat|prod|npe)-[a-z0-9]+-[0-9]+-(batch|streaming)-(autoscale|fixed)-[0-9]+$"
+    example: "ap-cluster-prod-analytics-5-batch-autoscale-1"
+
+required_labels:
+  - resource_name
+  - project_name
+  - region_name
+  - environment_name
+  - application_name
+  - owner_name
+  - purpose
+
+recommended_labels:
+  - resource_creator
+  - cost_center
+  - data_classification
+  - automation_source
+  - lifecycle
+  - expiry_date

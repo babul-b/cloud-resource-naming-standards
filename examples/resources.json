@@ -1,0 +1,54 @@
+[
+  {
+    "type": "virtual_machine",
+    "name": "vm-ubnt-dev-region1-analytics-edge",
+    "labels": {
+      "resource_name": "vm",
+      "project_name": "enterprise-analytics-dev",
+      "region_name": "region1",
+      "environment_name": "dev",
+      "application_name": "analytics-platform",
+      "owner_name": "data-engineering",
+      "purpose": "edge-node-for-batch-processing"
+    }
+  },
+  {
+    "type": "storage_bucket",
+    "name": "bkt-prod-region1-reporting-curated-data",
+    "labels": {
+      "resource_name": "storage-bucket",
+      "project_name": "enterprise-reporting-prod",
+      "region_name": "region1",
+      "environment_name": "prod",
+      "application_name": "reporting-platform",
+      "owner_name": "reporting-team",
+      "purpose": "store-curated-reporting-data"
+    }
+  },
+  {
+    "type": "service_account",
+    "name": "sa-data-dev-region1-analytics-pipeline",
+    "labels": {
+      "resource_name": "service-account",
+      "project_name": "enterprise-analytics-dev",
+      "region_name": "region1",
+      "environment_name": "dev",
+      "application_name": "analytics-platform",
+      "owner_name": "data-engineering",
+      "purpose": "run-data-pipeline"
+    }
+  },
+  {
+    "type": "firewall_rule",
+    "name": "fw-data-dev-allow-ingress-analytics-api",
+    "labels": {
+      "resource_name": "firewall-rule",
+      "project_name": "shared-network-dev",
+      "region_name": "region1",
+      "environment_name": "dev",
+      "application_name": "analytics-platform",
+      "owner_name": "network-team",
+      "purpose": "allow-api-ingress"
+    }
+  }
+]
