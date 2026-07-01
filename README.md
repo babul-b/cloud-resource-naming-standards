@@ -2,7 +2,7 @@
 
 This repository contains a generic, anonymized cloud resource naming standard that can be used as a starting point for public learning, internal governance, or infrastructure-as-code review.
 
-Medium article: `<PASTE_YOUR_MEDIUM_STORY_LINK_HERE>`
+> Medium article: [https://medium.com/@babul_b/a-practical-guide-to-cloud-resource-naming-conventions](https://medium.com/@babul_b/a-practical-guide-to-cloud-resource-naming-conventions-c1bbe581f268)
 
 ## What is included
 
@@ -76,28 +76,6 @@ PASS [2] storage_bucket: bkt-prod-region1-reporting-curated-data
 PASS [3] service_account: sa-data-dev-region1-analytics-pipeline
 PASS [4] firewall_rule: fw-data-dev-allow-ingress-analytics-api
 ```
-
-## How to publish this repo publicly
-
-1. Create a public GitHub repository, for example: `cloud-resource-naming-standards`.
-2. Upload this repository content.
-3. Replace `<PASTE_YOUR_MEDIUM_STORY_LINK_HERE>` in this README after your Medium story is published.
-4. Add the GitHub repo link to your Medium story under the `Source Code` section.
-
-## Safety checklist before publishing
-
-Before making the repository public, confirm that it does not contain:
-
-- Real company names
-- Real customer names
-- Real employee names
-- Real GCP/AWS/Azure project IDs
-- Private IP ranges
-- Internal domain names
-- Service account keys
-- Passwords or tokens
-- Proprietary architecture details
-- Confidential business logic
 
 ## License
 
